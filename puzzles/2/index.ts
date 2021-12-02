@@ -5,9 +5,10 @@ let depth = 0
 
 export default () => {
     const input = fs.readFileSync("./puzzles/2/input", 'utf-8')
-    const orders = input.split("\r").map(order => order.split(" "))
+    const commands = input.split("\r")
 
-    for (let [order, amount] of orders) {
+    for (let command of commands) {
+        const [order, amount] = command.split(" ")
         eval(order + "(" + amount + ")")
     }
     return horizontalPos * depth
