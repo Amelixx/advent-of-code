@@ -11,7 +11,7 @@ export default () => {
         const [order, amount] = command.split(" ")
         eval(order + "(" + amount + ")")
     }
-    return horizontalPos * depth
+    return [horizontalPos * depth]
 }
 
 function forward (amount: number) {
